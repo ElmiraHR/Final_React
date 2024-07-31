@@ -1,0 +1,153 @@
+.carousel-container {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+ 
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px;
+  cursor: pointer;
+}
+
+.category-image {
+  width: 100%;
+  height: 350px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 12px; /* Rounded corners */
+  border: 1px solid #CCC;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 350px; /* Fixed height */
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  border-radius: 12px;
+  color: #666;
+  font-size: 1.2em;
+}
+
+.category-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+body.dark-theme .category-title {
+  color: #fff; /* White text for dark theme */
+}
+/* Удаление нижних кружочков (точек) */
+.custom-dot-list-style {
+  display: none; /* Скрыть точки навигации */
+}
+
+/* Стили для кнопок навигации */
+.carousel-container .react-multiple-carousel__arrow {
+  background-color: #333; /* Темный цвет для стрелок */
+  color: #fff; /* Цвет стрелок */
+  border-radius: 50%; /* Округлые стрелки */
+  opacity: 0.7; /* Полупрозрачность */
+ /* Make the arrows absolutely positioned */
+}
+
+/* Дополнительные стили для лучшего отображения стрелок */
+.carousel-container .react-multiple-carousel__arrow--left {
+  left: 0; /* Позиция стрелки влево */
+}
+
+.carousel-container .react-multiple-carousel__arrow--right {
+  right: 0; /* Позиция стрелки вправо */
+}
+
+/* Изменение цвета при наведении */
+.carousel-container .react-multiple-carousel__arrow:hover {
+  background-color: #555; /* Более темный цвет при наведении */
+  opacity: 1; /* Полная непрозрачность */
+}
+
+.line {
+  height: 50%;
+  border-bottom: 1px solid #DDDDDD;
+  width: 80%;
+  margin-left: 32px;
+}
+.carouselHeader {
+  display: flex;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding-bottom: 0;
+}
+
+.carouselHeader h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: bold;
+  
+}
+.carouselBtn {
+  border: 1px solid #DDDDDD;
+  color: #8B8B8B;
+  border-radius: 6px;
+  background: transparent;
+  white-space: nowrap;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+ }
+ .carouselBtn:hover {
+  background-color: #EDEEEE;
+ }
+ body.dark-mode .carouselBtn {
+  color: #EDEEEE;
+ }
+
+ @media (max-width: 1400px) {
+  .carouselHeader{
+    margin: 0 40px;
+  }
+    
+ }
+ @media (max-width: 1200px) {
+  .carouselHeader{
+    margin: 0 40px;
+  }
+    
+ }
+ @media (max-width: 992px) {
+  .carouselHeader{
+    margin: 0 40px;
+  }
+  .carouselHeader h3 {
+    font-size: 44px;
+  }
+  .carouselBtn {
+    padding: 5px 12px;
+  }
+   
+ }
+ @media (max-width: 768px) {
+  .carouselHeader h3 {
+    font-size: 34px;
+  }
+ }
+ 
+ @media (max-width: 576px) {
+  .carouselHeader h3 {
+    font-size: 24px;
+  }
+  .carousel {
+    margin-top: 20px;
+  }
+   }

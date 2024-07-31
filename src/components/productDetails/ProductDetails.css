@@ -1,0 +1,154 @@
+.productDetails {
+  width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 574px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 82px;
+  }
+  
+  .productImageContainer {
+    width: 780px;
+    display: flex;
+    justify-content: center;
+    height: 572px;
+  }
+  
+ .descriptionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #282828;
+ }
+  .productImage  {
+  
+    height: 572px;
+    width: 500px;
+  }
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+   max-width: 574px;
+    padding-left: 20px;
+    max-height: 574px;
+  }
+  .priceBox {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .productTitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .productPrice {
+    height: 50px;
+    font-size: 20px;
+    color: #333;
+    font-size: 64px;
+    font-weight: bold;
+  }
+  
+  .discountedPrice {
+    color: #282828;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .originalPrice {
+    text-decoration: line-through;
+    font-size: 40px;
+    font-weight: 600;
+    color: #8b8b8b;
+    padding-top: 20px;
+  }
+  
+  .productCounter {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0;
+  }
+  
+  .counterLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    background-color: white;
+    padding: 0;
+    margin: 0 ;
+    color: #8b8b8b;
+    font-size: 60px;
+    font-weight:300;
+    border: 1px solid #8b8b8b;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    cursor: pointer;
+  }
+  .counterRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    color: #8b8b8b;
+    font-size: 40px;
+    font-weight:300;
+    background-color: white;
+    padding: 0;
+    margin: 0 ;
+    border: 1px solid #8b8b8b;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  .counterValue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 40px;
+    width: 96px;
+    height: 58px;
+    background-color: white;
+    color: #282828;
+    font-size: 16px;
+    border: 1px solid #8b8b8b;
+  }
+  
+  .productDescription {
+   max-height: 150px;
+    font-size: 14px;
+    color: #8b8b8b;
+  }
+  .readMoreButton {
+    margin-top: 10px;
+   background: none;
+    color: #282828;
+    text-decoration: underline;
+    text-align: left;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .Badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 40px;
+    width: 63px;
+    height: 34px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    animation: blink 1s infinite;
+  }

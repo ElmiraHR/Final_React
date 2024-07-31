@@ -1,0 +1,48 @@
+.buttonForm {
+    width: 516px;
+    height: 58px;
+    border-radius: 6px;
+    background-color: white;
+    color: #282828;
+    font-size: 20px;
+    padding: 16px 32px;
+    cursor: pointer;
+  }
+  .buttonForm:hover {
+    background-color: #282828;
+    color: white;
+  }
+  .buttonForm.clicked {
+    background-color: #F1F3F4;
+    color: blue;
+    border: 1px solid #282828;
+  }
+  @media (max-width: 1400px) {
+    .buttonForm{
+     
+     margin-bottom: 20px;
+    }
+   }
+  @media (max-width: 1200px) {
+    .buttonForm{
+     width: 80%px;
+     font-size: 18px;
+     margin-bottom: 20px;
+    }
+   }
+
+   @media (max-width: 992px) {
+    .buttonForm{
+     font-size: 16px;
+    }
+   }
+
+   @media (max-width: 578px) {
+    .buttonForm{
+      max-width: 330px;
+      height: auto;
+     font-size: 16px;
+     margin-left: 10px;
+     margin-right: 10px;
+    }
+   }

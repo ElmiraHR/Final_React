@@ -1,0 +1,105 @@
+.footerGrid{
+    padding: 0 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.GridTitle {
+    
+    color: #8B8B8B;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 32px;
+    margin-top: 32px;
+    
+}
+body.dark-mode .footerTitle {
+    color: #DDDDDD;
+}
+
+.GridText {
+  
+    color: #282828;
+    font-size: 40px;
+    font-weight: 600;
+    padding-left: 32px;
+    text-align: left;
+    line-height: 40px;
+    margin: 16px 0 32px 0;
+    
+}
+.GridText-24 {
+    
+    color: #282828;
+    font-size: 40px;
+    font-weight: 600;
+    padding-left: 32px;
+    padding-bottom: 40px;
+    text-align: left;
+    line-height: 40px;
+    margin: 16px 0 32px 0;
+}
+
+.social{
+    display: flex;
+   padding-left: 32px;
+   padding-top: 32px;
+   padding-bottom: 32px;
+   gap: 16px;
+}
+
+.social img {
+    width: 43px;
+}
+
+.phone {
+    height: 185px;
+}
+.footerTitle{
+    font-size: 64px;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 992px) {
+   
+    .GridText, .GridText-24{
+        font-size: 28px;
+    }
+    .GridTitle{
+        font-size: 16px;
+    }
+   .footerTitle {
+    font-size: 44px;
+   }
+ }
+ @media (max-width: 768px) {
+    
+ }
+ 
+ @media (max-width: 576px) {
+    .GridText, .GridText-24{
+        font-size: 16px;
+        padding: 12px;
+        margin: 0px;
+        line-height: 22px;
+    }
+    .GridTitle{
+        font-size: 12px;
+    }
+    .social{
+        padding: 10px;
+        height: 100px;
+    }
+    .social img {
+        width: 33px;
+        padding-left: 0px;
+    }
+    .footerGrid{
+   grid-auto-flow: row dense;
+    }
+    .footerTitle {
+        font-size: 30px;
+        padding-left: 30px;
+
+       }
+  }

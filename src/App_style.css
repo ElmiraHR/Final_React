@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.5s ease;
+
+}
+:root {
+  --header-link-color: #000; /* Цвет текста ссылок по умолчанию */
+  --header-background-color: #fff; /* Цвет фона хедера */
+}
+
+body.dark-mode {
+  --header-link-color: #808181;
+  --header-background-color: #302F2F;
+}
+
+body.light-mode {
+  
+  --header-link-color: #282828;
+  --header-background-color: #ffffff;
+}
+
+ 
+/* 
+@media (max-width: 992px) {
+   
+}
+@media (max-width: 768px) {
+   
+}
+
+@media (max-width: 576px) {
+   
+  } */

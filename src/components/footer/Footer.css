@@ -1,0 +1,43 @@
+.map{
+    display: flex;
+
+justify-content: center;}
+
+.map iframe{
+    width: 1440px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 40px;
+    border-radius: 12px;
+}
+
+h2{
+    font-size: 64px;
+    font-weight: bold;
+    text-align: left;
+    margin: 40px;
+    transition: all 0.5s ease;
+}
+
+
+@media (max-width: 992px) {
+   h2{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 30px;
+    padding-left: 40px;
+   }
+}
+@media (max-width: 768px) {
+   
+}
+
+@media (max-width: 576px) {
+    h2{
+        font-size: 30px;
+        font-weight: bolder;
+        margin: 16px;
+       }
+  }

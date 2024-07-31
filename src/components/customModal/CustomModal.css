@@ -1,0 +1,71 @@
+.Modal {
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0D50FF;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2; 
+ 
+}
+.Modal h2{
+   font-size: 44px;
+}
+.Modal p{
+  font-size: 20px;
+}
+.Overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 10);
+  z-index: 2; 
+}
+@media (max-width: 1200px) {
+  .Modal h2 {
+    font-size: 30px;
+    text-align:left;
+    padding-left: 0;
+   }
+   .Modal p{
+    font-size: 18px;
+    text-align:center;
+   }
+}
+
+@media (max-width: 768px) {
+   .Modal h2{
+  font-size: 24px;
+  text-align:left;
+  padding-left: 0;
+   }
+   .Modal p{
+    font-size: 16px;
+    text-align:center;
+   }
+.Modal {
+  padding: 10px;
+}
+}
+
+@media (max-width: 576px) {
+  .Modal h2{
+    text-align:left;
+    padding-left: 0;
+    font-size: 18px;
+     }
+     .Modal p{
+      font-size: 14px;
+     }
+  }

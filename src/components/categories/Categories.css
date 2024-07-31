@@ -1,0 +1,123 @@
+.categoriesPage {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.categoriesPageHeader {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.categoriesHeaderTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  margin: 40px 10px;
+}
+body.dark-mode .categoriesHeaderTitle {
+  color: #DDDDDD;
+}
+
+.btnLine {
+  width: 16px;
+  height: 50%;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoriesPageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 фракции */
+  gap: 20px;
+  justify-content: center;
+}
+
+.categoriesPageItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.categoriesPageImage {
+  max-width: 100%;
+  height: 350px;
+  border-radius: 12px;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 350px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.categoriesPageTitle {
+  margin-top: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.categoriesPageBtn {
+  border: 1px solid #DDDDDD;
+  color: #8B8B8B;
+  border-radius: 6px;
+  background: transparent;
+  white-space: nowrap;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.categoriesPageBtn.active {
+  font-weight: 500;
+  color: #282828;
+}
+
+body.dark-mode .categoriesPageBtn.active {
+  color: #EDEEEE;
+}
+
+.categoriesPageBtn:hover {
+  background-color: #EDEEEE;
+}
+
+@media (max-width: 1200px) {
+  .categoriesPageGrid {
+    grid-template-columns: repeat(3, 1fr); /* 3 фракции на экранах < 1200px */
+  }
+}
+
+@media (max-width: 992px) {
+  .categoriesPageGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 фракции на экранах < 992px */
+  }
+}
+
+@media (max-width: 576px) {
+  .categoriesPageGrid {
+    grid-template-columns: 1fr; /* 1 фракция на экранах < 576px */
+  }
+}
