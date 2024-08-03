@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Switch  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './app/store';
 import './App_style.css';
@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); // 5000 миллисекунд = 5 секунд
+    }, 3000);
 
     return () => clearTimeout(timer); // Очистка таймера при размонтировании компонента
   }, []);
@@ -37,25 +37,24 @@ function App() {
   return (
     <Theme>
       <Provider store={store}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/pages/home" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/pages/categories" element={<CategoriesGrid />} /> 
-            <Route path="/category/:id" element={<ProductByCategoryPage />} />
-            {/* <Route path="products" element={<ProductItem />} /> */}
-            <Route path="discounted-products" element={<SalePage />} />
-            <Route path="/pages/allProductsPage" element={<AllProductsPage />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/pages/salePage" element={<SalePage />} />
-            <Route path="/product/:productId" element={<ProductItem />} />
-             <Route path="*" element={<ErrorPage />} /> 
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
+        <Router>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />  {/* Добавьте этот маршрут */}
+              <Route path="/pages/home" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/pages/categories" element={<CategoriesGrid />} /> 
+              <Route path="/category/:id" element={<ProductByCategoryPage />} />
+              <Route path="discounted-products" element={<SalePage />} />
+              <Route path="/pages/allProductsPage" element={<AllProductsPage />} />
+              <Route path="/pages/salePage" element={<SalePage />} />
+              <Route path="/product/:productId" element={<ProductItem />} />
+              <Route path="*" element={<ErrorPage />} /> 
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
       </Provider>
     </Theme>
   );

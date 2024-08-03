@@ -1,0 +1,41 @@
+.breadcrumbContainer {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .breadcrumbItem {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark-gray);
+    background-color: var(--color-light);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-small);
+    white-space: nowrap;
+    padding: 6px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
+  .breadcrumbItem:hover {
+    background-color: var(--color-light-gray2);
+    color: var(--color-dark-gray);
+  }
+  
+  .breadcrumbActive {
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+  
+  .breadcrumbActive:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  
+  .breadcrumbSeparator {
+    width: 16px;
+    height: 1px;
+    background-color: var(--color-light-gray);
+  }

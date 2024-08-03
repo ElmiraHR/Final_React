@@ -13,18 +13,27 @@
     display: flex;
     justify-content: center;
     height: 572px;
-  }
+     }
+  .productDetailsTitle{
+    color: #282828;
+    font-size: 40px;
   
+  }
  .descriptionTitle {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 32px;
   color: #282828;
  }
-  .productImage  {
-  
+  .productImage{
     height: 572px;
     width: 500px;
+  }
+  .details{
+    height: 100%;
+    width: 580px;
+    padding-top: 5px;
+
   }
   .productInfo {
     display: flex;

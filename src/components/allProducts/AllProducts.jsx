@@ -105,6 +105,14 @@ const AllProducts = () => {
     setFilteredProducts(result);
   };
 
+  const goToCart = () => {
+    navigate('/cart');
+  };
+
+  const continueShopping = () => {
+    navigate('/pages/allProductsPage'); // Предполагается, что у вас есть маршрут для всех продуктов
+  };
+
   return (
     <div className='allProductsPage'>
       <h3>All Products</h3>
@@ -195,7 +203,15 @@ const AllProducts = () => {
       <Modal
         isOpen={showModal}
         onClose={handleModalClose}
-        message={{ title: 'Success', body: modalMessage }}
+        message={{ title: 'Success', body: modalMessage,
+          footer: (
+            <div className="modalFooter">
+              <button onClick={goToCart} className="modalButton">Go to Cart</button>
+              
+            </div>
+          )
+         }}
+        
       />
     </div>
   );

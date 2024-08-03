@@ -18,7 +18,7 @@ const Banner = () => {
   return (
     <div className='heroBox' style={{ position: 'relative' }}>
       <h1>Amazing Discounts <br /> on Pets Products!</h1>
-      <Link to="/pages/allProductsPage">
+      <Link to="/pages/salePage">
         <CustomButton clickedText="Checked" onClick={handleButtonClick}>
           Check out
         </CustomButton>

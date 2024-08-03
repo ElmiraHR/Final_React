@@ -106,6 +106,10 @@ const DiscountedProducts = () => {
     setFilteredProducts(result);
   };
 
+  const goToCart = () => {
+    navigate('/cart');
+  };
+
   return (
     <div className='discountedProductsPage'>
       <h3>Discounted Products</h3>
@@ -196,7 +200,14 @@ const DiscountedProducts = () => {
       <Modal
         isOpen={showModal}
         onClose={handleModalClose}
-        message={{ title: 'Success', body: modalMessage }}
+        message={{ title: 'Success', body: modalMessage,
+          footer: (
+            <div className="modalFooter">
+              <button onClick={goToCart} className="modalButton">Go to Cart</button>
+              
+            </div>
+          )
+         }}
       />
     </div>
   );

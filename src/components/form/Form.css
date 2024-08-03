@@ -170,15 +170,15 @@ input::placeholder {
 
 @media (max-width: 576px) {
    .form {
-    max-width: 350px;
+    width: 330px;
    }
    .formBox {
-    margin-bottom: 20px;
+   justify-content: center;
    }
    input {
-    max-width: 330px;
-    height: auto;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 290px;
+    height: 20px;
+    margin: 10px auto;
    }
+ 
   }
