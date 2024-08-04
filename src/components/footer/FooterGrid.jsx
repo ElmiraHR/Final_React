@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{maxWidth: "1440px", m: "0 auto" }}>
+            <Box sx={{maxWidth: "1480px", m: "0 auto" }}>
                 <Typography
                     variant="h4"
                     gutterBottom

@@ -7,7 +7,10 @@
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 82px;
   }
-  
+  .productDetailsBox{
+    max-width: 1480px;
+    margin: 40px auto;
+  }
   .productImageContainer {
     width: 780px;
     display: flex;
@@ -16,8 +19,9 @@
      }
   .productDetailsTitle{
     color: #282828;
+    font-family: "Montserrat", sans-serif;
     font-size: 40px;
-  
+   max-width: 90%;
   }
  .descriptionTitle {
   font-size: 20px;
@@ -146,6 +150,9 @@
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+  }
+  .readMoreButton:hover{
+    color: #0D50FF;
   }
   .Badge {
     display: flex;

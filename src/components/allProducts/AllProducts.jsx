@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CustomButton from '../button/CustomButton';
 import Modal from '../customModal/CustomModal'; // Импортируем компонент модалки
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cart/cartSlice';
 import './AllProducts.css';
+import line from "../../assets/Line.svg";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -17,6 +18,7 @@ const AllProducts = () => {
   const [modalMessage, setModalMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -113,8 +115,25 @@ const AllProducts = () => {
     navigate('/pages/allProductsPage'); // Предполагается, что у вас есть маршрут для всех продуктов
   };
 
+  const isCurrentPage = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <div className='allProductsPage'>
+      <div className="allPageHeader">
+        <Link to="/pages/home">
+          <button className={`categoriesPageBtn ${isCurrentPage('/pages/home') ? 'active' : ''}`}>
+            Main Page
+          </button>
+        </Link>
+        <div className="btnLine"><img src={line} alt="line" /></div>
+        <Link to="/pages/allProductsPage">
+          <button className={`categoriesPageBtn ${isCurrentPage('/pages/allProductsPage') ? 'active' : ''}`}>
+            All products
+          </button>
+        </Link>
+      </div>
       <h3>All Products</h3>
       <div className="filterBar">
         <div className="filterSection">

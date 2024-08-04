@@ -121,4 +121,7 @@ body.dark-mode .categoriesPageBtn.active {
   .categoriesPageGrid {
     grid-template-columns: 1fr; /* 1 фракция на экранах < 576px */
   }
+  .categoriesPageBtn{
+    display: none;
+  }
 }

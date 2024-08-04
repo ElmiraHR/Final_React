@@ -6,8 +6,9 @@
     margin: 0 auto;
     padding: 20px;
   }
-  .productByCategoryPage h3{
+  .discountedProductsPage h3{
     font-size: 64px;
+    margin-bottom: 40px;
   }
   .productByCategoryPage h3 {
     margin-bottom: 20px;
@@ -18,6 +19,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-content: center;
+    margin-top: 40px;
   }
   
   .productItem {
@@ -147,6 +149,7 @@
     align-items: center;
     color: #282828;
     gap: 16px;
+    margin-bottom: 40px;
   }
 
   body.dark-mode .filterBar p{

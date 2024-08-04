@@ -209,17 +209,22 @@
     .productGrid {
         grid-template-columns: repeat(2, 1fr);
        }
+       .filterSection{
+        flex-wrap: wrap;
+       }
   }
   
   @media (max-width: 576px) {
     .productGrid {
         grid-template-columns: repeat(1, 1fr);
         margin: 0 auto;
+        margin-top: 200px;
        }
       .productItem {
         row-gap: 21px;
       }
       .productByCategoryPage h3{
         text-align: center;
+        font-size: 30px;
       }
     } 

@@ -1,6 +1,6 @@
 .carouselSale-container {
   display: flex;
-  max-width: 1440px;
+  max-width: 1480px;
   margin: 0px auto;
 
 }
@@ -16,7 +16,7 @@
   }
 
   .carousel-item-padding {
-    padding: 32px;
+    padding: 22px;
   }
   .carouselSaleHeader .line {
     flex-grow: 1;
@@ -36,19 +36,30 @@
     padding: 10px 20px;
     cursor: pointer;
   }
-  
+  .sale-title {
+    max-width: 90%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    font-size: 16px; 
+    font-weight: 500; 
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px; 
+  }
   .sale-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 422px;
-    max-width: 350px;
+    max-width: 380px;
     row-gap: 16px;
+    gap: 16px;
     text-align: center;
     cursor: pointer;
     border: 1px solid #CCC;
     border-radius: 12px;
-   
+   margin-bottom: 40px;
+  
   }
   
   .sale-image {

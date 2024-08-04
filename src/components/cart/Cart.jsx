@@ -7,18 +7,15 @@ import CustomButton from '../button/CustomButton';
 import Modal from '../customModal/CustomModal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import line from "../../assets/Line.svg";
+import { Link, useLocation } from 'react-router-dom';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.items);
   const totalQuantity = useSelector(state => state.counter.value);
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
   const location = useLocation();
-  
-
 
   const handleRemove = (productId, quantity) => {
     dispatch(removeFromCart(productId));
@@ -51,15 +48,16 @@ const Cart = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
-  const handleOrder = () => {
+  const handleOrder = (event) => {
+    event.preventDefault();
     setShowModal(true);
   };
 
   const handleModalClose = () => {
-    setShowModal(false);
     dispatch(clearCart());
     dispatch(reset());
-    navigate('/LeerCart'); // перенаправляем на страницу LeerCart после закрытия модального окна
+    setShowModal(false);
+    setIsOrderPlaced(true);
   };
 
   const isCurrentPage = (path) => {
@@ -73,88 +71,110 @@ const Cart = () => {
     return title;
   };
 
-  if (cartItems.length === 0) {
-    return <p>Your cart is empty</p>;
+  if (isOrderPlaced || cartItems.length === 0) {
+    return (
+      <div className="emptyCart cartContainer ">
+        <div className='empty CartBoxHeader'>
+          <h2>Shopping cart</h2>
+          <div className="CartLine"></div>
+          <Link to="/pages/allProductsPage">
+            <button className={`categoriesPageBtn ${isCurrentPage('/pages/categories') ? 'active' : ''}`}>
+              Back to the store
+            </button>
+          </Link>
+          </div>
+          <div className='LeerCart'>
+          
+      
+        <p className='LeerCartInfo'>Looks like you have no items in your basket currently.</p>
+        <Link to="/pages/allProductsPage">
+          <button className="button">
+            Continue shopping
+          </button>
+        </Link>
+        </div>
+       </div>
+    );
   }
 
   return (
     <div className="cartContainer">
-     <div className='CartBoxHeader'>
+      <div className='CartBoxHeader'>
         <h2>Shopping cart</h2>
-       <div className="CartLine"></div>
+        <div className="CartLine"></div>
         <Link to="/pages/allProductsPage">
           <button className={`categoriesPageBtn ${isCurrentPage('/pages/categories') ? 'active' : ''}`}>
             Back to the store
           </button>
-          </Link>
-          </div>
-          <div className='CartBox'>
-           <div className="cartLeft">
-        {cartItems.map((item) => {
-          const currentPrice = item.discont_price || item.price;
-          const totalPrice = (item.quantity * currentPrice).toFixed(2);
-          const originalPrice = item.discont_price ? item.price : null;
+        </Link>
+      </div>
+      <div className='CartBox'>
+        <div className="cartLeft">
+          {cartItems.map((item) => {
+            const currentPrice = item.discont_price || item.price;
+            const totalPrice = (item.quantity * currentPrice).toFixed(2);
+            const originalPrice = item.discont_price ? item.price : null;
 
-          return (
-            <div key={item.id} className="cartItem">
-              <img src={`http://localhost:3333${item.image}`} alt={item.title} className="cartItemImage" />
-              <div className="cartItemDetails">
-              <button className="removeButton" onClick={() => handleRemove(item.id, item.quantity)}>✖</button>
-                <h3 className='CartItemTitle'>{truncateTitle(item.title, 200)}</h3>
-                <div className="cartItemActions">
-                  <div className="cartItemQuantity">
-                    <div className='countRight' onClick={() => handleQuantityChange(item.id, -1)} disabled={item.quantity === 1}>-</div >
-                    <span className='valueSpan'>{item.quantity}</span>
-                    <div className='countLeft' onClick={() => handleQuantityChange(item.id, 1)}>+</div >
+            return (
+              <div key={item.id} className="cartItem">
+                <img src={`http://localhost:3333${item.image}`} alt={item.title} className="cartItemImage" />
+                <div className="cartItemDetails">
+                  <button className="removeButton" onClick={() => handleRemove(item.id, item.quantity)}>✖</button>
+                  <h3 className='CartItemTitle'>{truncateTitle(item.title, 200)}</h3>
+                  <div className="cartItemActions">
+                    <div className="cartItemQuantity">
+                      <div className='countRight' onClick={() => handleQuantityChange(item.id, -1)} disabled={item.quantity === 1}>-</div >
+                      <span className='valueSpan'>{item.quantity}</span>
+                      <div className='countLeft' onClick={() => handleQuantityChange(item.id, 1)}>+</div >
+                    </div>
+                    <div className='PriceBox'> 
+                      <span className="currentPrice"> ${totalPrice}</span>
+                      {originalPrice && (
+                        <span className="CartOriginalPrice">
+                          <del>${originalPrice.toFixed(2)}</del> 
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <div className='PriceBox'> 
-                    <span className="currentPrice"> ${totalPrice}</span>
-                    {originalPrice && (
-                      <span className="CartOriginalPrice">
-                        <del>${originalPrice.toFixed(2)}</del> 
-                      </span>
-                    )}
-                  </div>
-                 
                 </div>
               </div>
+            );
+          })}
+        </div>
+        <div className="cartRight">
+          <form className="orderForm" onSubmit={handleOrder}>
+            <h3>Order Details</h3>
+            <p className='countFormTitle'>{calculateTotalItems()} Items</p>
+            <div className='infoTitleForm'>
+              <div><p className='countFormTitle total'>Total </p></div>
+              <div className='TotalPrice'><p>${calculateTotalPrice()}</p></div>
             </div>
-          );
-        })}
+            <Box className='formInputColumn'
+              component="form"
+              sx={{
+                '& > :not(style)': { m: 0 },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField id="name" label="Name" variant="outlined" />
+              <TextField id="phone" label="Phone number" variant="outlined" />
+              <TextField id="email" label="Email" variant="outlined" />
+            </Box>
+            <div className='orderButton'>
+              <CustomButton type="submit">Order</CustomButton>
+            </div>
+          </form>
+        </div>
+        {showModal && (
+          <Modal
+            isOpen={showModal}
+            onClose={handleModalClose}
+            message={{ title: 'Congratulations!',
+            body: 'Your order has been successfully placed on the website.' }}
+          />
+        )}
       </div>
-      <div className="cartRight">
-        <form className="orderForm">
-          <h3>Order Details</h3>
-          <p className='countFormTitle'>{calculateTotalItems()} Items</p>
-          <div className='infoTitleForm'>
-            <div><p className='countFormTitle total'>Total </p></div>
-            <div className='TotalPrice'><p>${calculateTotalPrice()}</p></div>
-          </div>
-          <Box className='formInputColumn'
-            component="form"
-            sx={{
-              '& > :not(style)': { m: 0 },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField id="name" label="Name" variant="outlined" />
-            <TextField id="phone" label="Phone number" variant="outlined" />
-            <TextField id="email" label="Email" variant="outlined" />
-          </Box>
-          <div className='orderButton'>
-            <CustomButton onClick={handleOrder}>Order</CustomButton>
-          </div>
-        </form>
-      </div>
-      {showModal && (
-        <Modal
-          isOpen={showModal}
-          onClose={handleModalClose}
-          message={{ title: 'Success', body: 'Your order has been placed successfully!' }}
-        />
-      )}
-    </div>
     </div>
   );
 };

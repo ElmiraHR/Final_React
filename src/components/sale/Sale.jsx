@@ -5,10 +5,11 @@ import 'react-multi-carousel/lib/styles.css';
 import './Sale.css';
 import { Link, useNavigate } from 'react-router-dom';
 import SalePage from '../../pages/SalePage';
- 
+
 const SaleComponent = () => {
   const [discountedProducts, setDiscountedProducts] = useState([]);
   const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,9 +27,11 @@ const SaleComponent = () => {
 
     fetchData();
   }, []);
+
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`); // Используем navigate для перенаправления
+    navigate(`/product/${productId}`);
   };
+
   const calculateDiscountPercentage = (originalPrice, discountPrice) => {
     return Math.round(((originalPrice - discountPrice) / originalPrice) * 100);
   };
@@ -37,7 +40,7 @@ const SaleComponent = () => {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
-      slidesToSlide: 4 // Количество слайдов, которое будет прокручиваться за одно нажатие
+      slidesToSlide: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -64,7 +67,7 @@ const SaleComponent = () => {
           draggable={true}
           showDots={true}
           responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
+          ssr={true}
           infinite={true}
           keyBoardControl={true}
           customTransition="all .5"

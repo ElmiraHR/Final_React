@@ -240,7 +240,7 @@
     align-items: center;
   }
  .removeButton:hover{
-  background-color: #DDDDDD;
+  background-color: transparent;
  }
   
   .orderForm label {
@@ -266,7 +266,25 @@
     border-radius: 6px;
     
   }
+.LeerCart{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  gap: 40px;
+}
+.LeerCartInfo{
+  font-size: 20px;
+  font-weight: 600;
 
+}
+.emptyCart{
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+.empty{
+  width: 100%;
+ margin-left: 0;
+}
   .formInputColumn{
     display: flex;
     flex-direction: column;
@@ -364,10 +382,24 @@
    }
    .cartItem{
     margin: 20px auto;
+    width: 90%;
    }
    .cartRight {
     max-width: 78%;
     margin: 0 auto;
+   }
+   .PriceBox{
+    max-width: 80%;
+    flex-direction: column;
+   }
+   .currentPrice{
+    max-height: 30px;
+    font-size: 30px;
+   }
+   .removeButton{
+    position: absolute;
+    top: 1%;
+    right: 5%;
    }
   }
   @media (max-width: 768px) {
@@ -377,6 +409,11 @@
      .cartLeft {
         max-width: 80%;
      }
+     .removeButton{
+     top:0px;
+     left:-175px;
+     }
+    
      .cartItemDetails {
         max-width: 150px;
         font-size: 14px;
@@ -391,13 +428,78 @@
     }
     .countRight, .countLeft {
         width: 80%;
+        height: 40px;
     }
     .valueSpan{
-       max-width: 20px;
+       max-width: 40px;
+       padding: 6px;
+       height: 40px;
+       font-size: 16px;
+       text-align: center;
     }
     
   }
   
-  @media (max-width: 576px) {
-     
+  @media (max-width: 645px) {
+    .currentPrice{
+      max-height: 30px;
+      font-size: 1.5rem;
+     }
+     .CartOriginalPrice{
+      font-size: 1rem;
+     }
     }
+    @media (max-width: 578px) {
+     .cartItemDetails{
+      flex-direction: column;
+     }
+     .cartItem img{
+      max-width: 150px;
+      height: 150px;
+      justify-content: center;
+     }
+     .cartItem{
+      max-width: 90vw;
+      max-height: 150px;
+      margin: 10px 15px;
+     }
+     .cartItemQuantity{
+      display: none;
+     }
+     .PriceBox{
+      max-height: 30px;
+     }
+     .CartOriginalPrice{
+      margin: 5px;
+     }
+     .CartItemTitle{
+      max-width: 100px;
+
+     }
+     .cartItemDetails{
+      padding: 5px;
+     }
+     
+      }
+      @media (max-width: 390px) {
+        .CartItemTitle{
+          max-width: 50px;
+    
+         }
+         .orderForm{
+          width: 280px;
+          margin: 5px auto;
+          padding: 10px;
+         }
+        .cartItem{
+          width: 280px;
+          max-height: 150px;
+          margin: 10px 15px;
+        }
+        .orderForm h3{
+          font-size: 24px;
+        }
+        .orderForm{
+          font-size: 20px;
+        }
+      }

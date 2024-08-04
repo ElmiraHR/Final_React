@@ -138,7 +138,7 @@ const ProductDetails = () => {
           />
         </div>
         <div className='productInfo'>
-          <h1 className='productDetailsTitle'>{title}</h1>
+          <h3 className='productDetailsTitle'>{title}</h3>
           <p className='productPrice'>
             {discountedPrice !== 'N/A' ? (
               <div className='priceBox'>

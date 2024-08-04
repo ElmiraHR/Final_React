@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import CustomButton from '../button/CustomButton';
 import Modal from '../customModal/CustomModal'; // Импортируем компонент модалки
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cart/cartSlice';
 import './DiscountedProducts.css';
+import line from "../../assets/Line.svg";
 
 const DiscountedProducts = () => {
   const [products, setProducts] = useState([]);
@@ -17,6 +18,7 @@ const DiscountedProducts = () => {
   const [modalMessage, setModalMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -110,8 +112,25 @@ const DiscountedProducts = () => {
     navigate('/cart');
   };
 
+  const isCurrentPage = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <div className='discountedProductsPage'>
+      <div className="allPageHeader">
+        <Link to="/pages/home">
+          <button className={`categoriesPageBtn ${isCurrentPage('/pages/home') ? 'active' : ''}`}>
+            Main Page
+          </button>
+        </Link>
+        <div className="btnLine"><img src={line} alt="line" /></div>
+        <Link to="/pages/salePage">
+          <button className={`categoriesPageBtn ${isCurrentPage('/pages/salePage') ? 'active' : ''}`}>
+            All sales
+          </button>
+        </Link>
+      </div>
       <h3>Discounted Products</h3>
       <div className="filterBar">
         <div className="filterSection">
@@ -130,14 +149,6 @@ const DiscountedProducts = () => {
             value={priceRange.max}
             onChange={handlePriceRangeChange}
           />
-          <label className='filterCheckBox'>
-            Discounted items
-            <input
-              type="checkbox"
-              checked={discountedOnly}
-              onChange={handleDiscountedOnlyChange}
-            />
-          </label>
           <p>Sorted</p>
           <select value={sortOrder} onChange={handleSortOrderChange}>
             <option value="">by default</option>
