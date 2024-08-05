@@ -137,15 +137,15 @@ const AllProducts = () => {
       <h3>All Products</h3>
       <div className="filterBar">
         <div className="filterSection">
-          <p>Price</p>
-          <input
+          <p className='filterPrice'>Price</p>
+          <input className='filterPriceInput'
             type="number"
             name="min"
             placeholder="from"
             value={priceRange.min}
             onChange={handlePriceRangeChange}
           />
-          <input
+          <input className='filterPriceInput'
             type="number"
             name="max"
             placeholder="to"
@@ -154,14 +154,14 @@ const AllProducts = () => {
           />
           <label className='filterCheckBox'>
             Discounted items
-            <input
+            <input className='filterCheckBoxInput'
               type="checkbox"
               checked={discountedOnly}
               onChange={handleDiscountedOnlyChange}
             />
           </label>
-          <p>Sorted</p>
-          <select value={sortOrder} onChange={handleSortOrderChange}>
+          <p className='filterSorted'>Sorted</p>
+          <select className='filterSortedSelect' value={sortOrder} onChange={handleSortOrderChange}>
             <option value="">by default</option>
             <option value="newest">newest</option>
             <option value="price_low_high">price: Low to High</option>

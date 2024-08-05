@@ -136,7 +136,6 @@
     height: 36px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
   }
@@ -217,5 +216,10 @@
       }
       .productByCategoryPage h3{
         text-align: center;
+      }
+      .discountedProductsPage h3{
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 0;
       }
     } 

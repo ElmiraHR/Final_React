@@ -228,11 +228,13 @@
     .carouselSale-container {
       padding: 0 5px;
     }
+
   }
   
   @media (prefers-color-scheme: dark) {
     .original-price {
       color: #bbb;
     }
+   
   }
   

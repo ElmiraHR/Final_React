@@ -139,7 +139,6 @@
     height: 36px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
   }
@@ -209,16 +208,14 @@
     .productGrid {
         grid-template-columns: repeat(2, 1fr);
        }
-       .filterSection{
-        flex-wrap: wrap;
-       }
+      
   }
   
   @media (max-width: 576px) {
     .productGrid {
         grid-template-columns: repeat(1, 1fr);
         margin: 0 auto;
-        margin-top: 200px;
+        margin-top: 40px;
        }
       .productItem {
         row-gap: 21px;
@@ -227,4 +224,8 @@
         text-align: center;
         font-size: 30px;
       }
+      .filterSection{
+        display: none;
+      }
+      
     } 

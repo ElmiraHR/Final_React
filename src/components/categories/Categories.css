@@ -116,6 +116,11 @@ body.dark-mode .categoriesPageBtn.active {
     grid-template-columns: repeat(2, 1fr); /* 2 фракции на экранах < 992px */
   }
 }
+@media (max-width: 768px) {
+  .categoriesPageHeader{
+    display: none;
+  }
+}
 
 @media (max-width: 576px) {
   .categoriesPageGrid {
@@ -123,5 +128,9 @@ body.dark-mode .categoriesPageBtn.active {
   }
   .categoriesPageBtn{
     display: none;
+  }
+  .categoriesPage h3 {
+    font-size: 40px;
+    text-align: center;
   }
 }
