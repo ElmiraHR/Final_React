@@ -12,7 +12,7 @@ const CarouselComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/categories/all');
+        const response = await axios.get('https://pet-shop-backend.slavab.kz/categories/all');
         if (response.data && Array.isArray(response.data)) {
           setCategories(response.data);
         } else {
@@ -79,7 +79,7 @@ const CarouselComponent = () => {
               style={{ cursor: 'pointer' }} // Устанавливаем курсор как указатель
             >
               {category.image ? (
-                <img src={`http://localhost:3333${category.image}`} alt={category.title} className="category-image" />
+                <img src={`https://pet-shop-backend.slavab.kz${category.image}`} alt={category.title} className="category-image" />
               ) : (
                 <div className="placeholder-image">No Image</div>
               )}

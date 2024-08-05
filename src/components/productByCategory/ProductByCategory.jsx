@@ -22,8 +22,8 @@ const ProductsByCategory = ({ isDarkMode }) => {
   useEffect(() => {
     const fetchCategoryAndProducts = async () => {
       try {
-        const categoryResponse = await axios.get(`http://localhost:3333/categories/${id}`);
-        const productsResponse = await axios.get('http://localhost:3333/products/all');
+        const categoryResponse = await axios.get(`https://pet-shop-backend.slavab.kz/categories/${id}`);
+        const productsResponse = await axios.get('https://pet-shop-backend.slavab.kz/products/all');
         
         if (categoryResponse.data && categoryResponse.data.data && Array.isArray(categoryResponse.data.data)) {
           const categoryProducts = categoryResponse.data.data;
@@ -103,7 +103,7 @@ const ProductsByCategory = ({ isDarkMode }) => {
           <div key={product.id} className="productItem" onClick={() => handleProductClick(product.id)}>
             <div className="productImageWrapper">
               {product.image ? (
-                <img src={`http://localhost:3333${product.image}`} alt={product.title} className="productImage" />
+                <img src={`https://pet-shop-backend.slavab.kz${product.image}`} alt={product.title} className="productImage" />
               ) : (
                 <div className="placeholderImage">No Image</div>
               )}

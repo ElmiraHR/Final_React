@@ -13,7 +13,7 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('http://localhost:3333/sale/send', data);
+      await axios.post('https://pet-shop-backend.slavab.kz/sale/send', data);
       setModalMessage({ title: 'Thank you!', body: 'Your request has been submitted successfully.' });
       setModalIsOpen(true);
       reset();

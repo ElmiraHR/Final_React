@@ -13,7 +13,7 @@ const SaleComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/products/all');
+        const response = await axios.get('https://pet-shop-backend.slavab.kz/products/all');
         if (response.data && Array.isArray(response.data)) {
           const productsWithDiscount = response.data.filter(product => product.discont_price);
           setDiscountedProducts(productsWithDiscount);
@@ -81,7 +81,7 @@ const SaleComponent = () => {
             <div key={index} className="sale-item" onClick={() => handleProductClick(product.id)}
             style={{ cursor: 'pointer' }}>
               {product.image ? (
-                <img src={`http://localhost:3333${product.image}`} alt={product.title} className="sale-image" />
+                <img src={`https://pet-shop-backend.slavab.kz${product.image}`} alt={product.title} className="sale-image" />
               ) : (
                 <div className="placeholder-image">No Image</div>
               )}

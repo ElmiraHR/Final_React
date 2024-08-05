@@ -23,7 +23,7 @@ const DiscountedProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3333/products/all');
+        const response = await axios.get('https://pet-shop-backend.slavab.kz/products/all');
         if (response.data && Array.isArray(response.data)) {
           const discounted = response.data.filter(product => product.discont_price);
           setProducts(discounted);
@@ -168,7 +168,7 @@ const DiscountedProducts = () => {
               onClick={(e) => handleProductClick(product.id, e)}
             >
               {product.image ? (
-                <img src={`http://localhost:3333${product.image}`} alt={product.title} className="productImage" />
+                <img src={`https://pet-shop-backend.slavab.kz${product.image}`} alt={product.title} className="productImage" />
               ) : (
                 <div className="placeholderImage">No Image</div>
               )}

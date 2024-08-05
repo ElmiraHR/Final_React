@@ -117,7 +117,7 @@ const Cart = () => {
 
             return (
               <div key={item.id} className="cartItem">
-                <img src={`http://localhost:3333${item.image}`} alt={item.title} className="cartItemImage" />
+                <img src={`https://pet-shop-backend.slavab.kz${item.image}`} alt={item.title} className="cartItemImage" />
                 <div className="cartItemDetails">
                   <button className="removeButton" onClick={() => handleRemove(item.id, item.quantity)}>✖</button>
                   <h3 className='CartItemTitle'>{truncateTitle(item.title, 200)}</h3>

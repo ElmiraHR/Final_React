@@ -25,14 +25,14 @@ const ProductDetails = () => {
     const fetchProductDetails = async () => {
       try {
         // Запрос информации о продукте
-        const productResponse = await axios.get(`http://localhost:3333/products/${productId}`);
+        const productResponse = await axios.get(`https://pet-shop-backend.slavab.kz/products/${productId}`);
         if (productResponse.data && productResponse.data.length > 0) {
           const productData = productResponse.data[0];
           setProduct(productData);
           setCategoryId(productData.categoryId);
 
           // Запрос всех категорий
-          const categoriesResponse = await axios.get('http://localhost:3333/categories/all');
+          const categoriesResponse = await axios.get('https://pet-shop-backend.slavab.kz/categories/all');
           const categories = categoriesResponse.data;
           
           // Найти категорию по categoryId
@@ -132,7 +132,7 @@ const ProductDetails = () => {
       <div className='productDetails'>
         <div className='productImageContainer'>
           <img
-            src={`http://localhost:3333${image}`}
+            src={`https://pet-shop-backend.slavab.kz${image}`}
             alt={title}
             className='details'
           />
