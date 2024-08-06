@@ -285,6 +285,13 @@
   width: 100%;
  margin-left: 0;
 }
+.orderButton{
+  position: relative;
+}
+.checked_alert{
+  position: fixed;
+
+}
   .formInputColumn{
     display: flex;
     flex-direction: column;
@@ -387,6 +394,7 @@
    .cartRight {
     max-width: 78%;
     margin: 0 auto;
+   
    }
    .PriceBox{
     max-width: 80%;
@@ -458,10 +466,13 @@
       height: 150px;
       justify-content: center;
      }
+     .cartRight {
+      margin: 0 10px;
+     }
      .cartItem{
-      max-width: 90vw;
+      max-width: 95vw;
       max-height: 150px;
-      margin: 10px 15px;
+     
      }
      .cartItemQuantity{
       display: none;
@@ -487,14 +498,14 @@
     
          }
          .orderForm{
-          width: 280px;
-          margin: 5px auto;
+          width: 300px;
+          max-height: 500px;
           padding: 10px;
          }
         .cartItem{
-          width: 280px;
+          width: 290px;
           max-height: 150px;
-          margin: 10px 15px;
+         
         }
         .orderForm h3{
           font-size: 24px;

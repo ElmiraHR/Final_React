@@ -11,18 +11,18 @@ const Footer = () => {
         <ThemeProvider theme={theme}>
             <Box sx={{maxWidth: "1480px", m: "0 auto" }}>
                 <Typography
-                    variant="h4"
+                    variant="h3"
                     gutterBottom
                     sx={{
-                       
                         fontSize: "clamp(45px, 6vw, 64px)",
                         fontWeight: 700,
                         textAlign: "left",
                         mb: 5,
-                        color: theme.palette.primary, 
+                        color: theme.palette.primary,
                     }}
+                    className='footerTitle'
                 >
-                   <h3 className='footerTitle'> Contact</h3>
+                    Contact
                 </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={8} md={8}>

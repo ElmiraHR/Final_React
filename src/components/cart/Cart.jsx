@@ -7,6 +7,8 @@ import CustomButton from '../button/CustomButton';
 import Modal from '../customModal/CustomModal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import { Link, useLocation } from 'react-router-dom';
 
 const Cart = () => {
@@ -15,6 +17,8 @@ const Cart = () => {
   const totalQuantity = useSelector(state => state.counter.value);
   const [showModal, setShowModal] = useState(false);
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+  const [form, setForm] = useState({ name: '', phone: '', email: '' });
+  const [snackbar, setSnackbar] = useState({ open: false, message: '' });
   const location = useLocation();
 
   const handleRemove = (productId, quantity) => {
@@ -50,7 +54,24 @@ const Cart = () => {
 
   const handleOrder = (event) => {
     event.preventDefault();
-    setShowModal(true);
+
+    // Validate form
+    const newErrors = [];
+    if (!form.name) newErrors.push('Name is required');
+    if (!form.phone) newErrors.push('Phone number is required');
+    if (!form.email) newErrors.push('Email is required');
+    else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.push('Email is invalid');
+
+    if (newErrors.length === 0) {
+      setShowModal(true);
+      setSnackbar({ open: false, message: '' }); // Clear errors if valid
+    } else {
+      setSnackbar({ open: true, message: newErrors.join(', ') });
+    }
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbar({ ...snackbar, open: false });
   };
 
   const handleModalClose = () => {
@@ -71,9 +92,14 @@ const Cart = () => {
     return title;
   };
 
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setForm(prevForm => ({ ...prevForm, [id]: value }));
+  };
+
   if (isOrderPlaced || cartItems.length === 0) {
     return (
-      <div className="emptyCart cartContainer ">
+      <div className="emptyCart cartContainer">
         <div className='empty CartBoxHeader'>
           <h2>Shopping cart</h2>
           <div className="CartLine"></div>
@@ -82,18 +108,16 @@ const Cart = () => {
               Back to the store
             </button>
           </Link>
-          </div>
-          <div className='LeerCart'>
-          
-      
-        <p className='LeerCartInfo'>Looks like you have no items in your basket currently.</p>
-        <Link to="/pages/allProductsPage">
-          <button className="button">
-            Continue shopping
-          </button>
-        </Link>
         </div>
-       </div>
+        <div className='LeerCart'>
+          <p className='LeerCartInfo'>Looks like you have no items in your basket currently.</p>
+          <Link to="/pages/allProductsPage">
+            <button className="button">
+              Continue shopping
+            </button>
+          </Link>
+        </div>
+      </div>
     );
   }
 
@@ -157,12 +181,41 @@ const Cart = () => {
               noValidate
               autoComplete="off"
             >
-              <TextField id="name" label="Name" variant="outlined" />
-              <TextField id="phone" label="Phone number" variant="outlined" />
-              <TextField id="email" label="Email" variant="outlined" />
+              <div className="formGroup">
+                <TextField
+                  id="name"
+                  label="Name"
+                  variant="outlined"
+                  value={form.name}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </div>
+              <div className="formGroup">
+                <TextField
+                  id="phone"
+                  label="Phone number"
+                  variant="outlined"
+                  value={form.phone}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </div>
+              <div className="formGroup">
+                <TextField
+                  id="email"
+                  label="Email"
+                  variant="outlined"
+                  value={form.email}
+                  onChange={handleChange}
+                  fullWidth
+                />
+              </div>
             </Box>
             <div className='orderButton'>
-              <CustomButton type="submit">Order</CustomButton>
+              <CustomButton clickedText="Checked" type="submit">
+                Order
+              </CustomButton>
             </div>
           </form>
         </div>
@@ -171,9 +224,19 @@ const Cart = () => {
             isOpen={showModal}
             onClose={handleModalClose}
             message={{ title: 'Congratulations!',
-            body: 'Your order has been successfully placed on the website.' }}
+            body: 'Your order has been successfully placed on the website.' }}
           />
         )}
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={6000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: 'center', horizontal: 'right' }} // Display Snackbar above form
+        >
+          <Alert onClose={handleSnackbarClose} severity="warning">
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );

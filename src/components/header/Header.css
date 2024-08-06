@@ -27,6 +27,7 @@
 }
 
 .header__link {
+  display: flex;
   text-decoration: none;
   color: var(--header-link-color);
   font-weight: 500;
@@ -119,11 +120,12 @@ body.dark-mode .header__cart img {
     gap: 15px;
   }
   .header__link {
-    font-size: 14px;
+    font-size: 12px;
     white-space: nowrap;
+    
   }
   .header__nav {
-    gap: 5px;
+    gap: 15px;
   }
   .header__logo img {
     width: 50px;

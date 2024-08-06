@@ -252,6 +252,7 @@
       }
       .allProductsPage h3{
         margin-bottom: 0;
+        text-align: center;
        }
        .btnLine{
         display: none;

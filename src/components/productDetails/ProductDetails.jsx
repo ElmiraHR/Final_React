@@ -139,7 +139,7 @@ const ProductDetails = () => {
         </div>
         <div className='productInfo'>
           <h3 className='productDetailsTitle'>{title}</h3>
-          <p className='productPrice'>
+          <div className='productPrice'>
             {discountedPrice !== 'N/A' ? (
               <div className='priceBox'>
                 <p className='discountedPrice'>${discountedPrice}</p>
@@ -151,7 +151,7 @@ const ProductDetails = () => {
             ) : (
               <span className='price'>${originalPrice}</span>
             )}
-          </p>
+          </div>
           <div className='productCounter'>
             <div className='counterLeft' onClick={() => handleQuantityChange(-1)}>-</div>
             <span className='counterValue'>{quantity}</span>
@@ -162,12 +162,13 @@ const ProductDetails = () => {
           </div>
           <div className='productDescription' style={descriptionStyle}>
             <p className='descriptionTitle'>Description</p>
-            {description}
-          </div>
-          {description.length > 100 && (
+            <span className='descriptionText'>{description}</span>
+           </div>
+          {description.length > 50 && (
             <button className='readMoreButton' onClick={() => setShowMore(!showMore)}>
               {showMore ? 'Show Less' : 'Read More'}
             </button>
+           
           )}
         </div>
         {showModal && (
