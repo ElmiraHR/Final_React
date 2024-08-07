@@ -20,23 +20,18 @@
 
   @media (max-width: 1200px) {
     .button{
-     width: 250px;
+      width: 150px;
      font-size: 18px;
+     white-space: nowrap;
     }
    }
 
-   @media (max-width: 992px) {
-    .button{
-     width: 150px;
-     height: auto;
-     font-size: 16px;
-    }
-   }
+
    @media (max-width: 576px) {
     .button{
-     width: 120px;
      height: 50px;
      font-size: 14px;
      white-space: nowrap;
+     padding: 0;
     }
    }

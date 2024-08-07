@@ -6,7 +6,7 @@ Modal.setAppElement('#root');
 const CustomModal = ({ isOpen, onClose, message }) => {
   useEffect(() => {
     if (isOpen) {
-      const timer = setTimeout(onClose, 40000);
+      const timer = setTimeout(onClose, 4000);
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);

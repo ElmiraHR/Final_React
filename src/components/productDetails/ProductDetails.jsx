@@ -13,9 +13,9 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [product, setProduct] = useState(null);
-  const [categoryName, setCategoryName] = useState(''); // Состояние для названия категории
-  const [categoryId, setCategoryId] = useState(null); // Состояние для ID категории
-  const [showMore, setShowMore] = useState(false);
+  const [categoryName, setCategoryName] = useState(''); 
+  const [categoryId, setCategoryId] = useState(null); 
+  const [isExpanded, setIsExpanded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [modalMessage, setModalMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -24,20 +24,17 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        // Запрос информации о продукте
         const productResponse = await axios.get(`https://pet-shop-backend.slavab.kz/products/${productId}`);
         if (productResponse.data && productResponse.data.length > 0) {
           const productData = productResponse.data[0];
           setProduct(productData);
           setCategoryId(productData.categoryId);
 
-          // Запрос всех категорий
           const categoriesResponse = await axios.get('https://pet-shop-backend.slavab.kz/categories/all');
           const categories = categoriesResponse.data;
           
-          // Найти категорию по categoryId
           const category = categories.find(cat => cat.id === productData.categoryId);
-          setCategoryName(category ? category.title : 'Category Title Not Available'); // Устанавливаем название категории
+          setCategoryName(category ? category.title : 'Category Title Not Available');
         } else {
           console.error('Product data not found or invalid format:', productResponse.data);
         }
@@ -51,23 +48,12 @@ const ProductDetails = () => {
     }
   }, [productId]);
 
-  if (!product) return <p>Loading...</p>; // Отображаем сообщение, пока данные загружаются
+  if (!product) return <p>Loading...</p>;
 
   const { image, title, description = '', discont_price, price } = product;
   const discountedPrice = discont_price ? discont_price.toFixed(2) : 'N/A';
   const originalPrice = price ? price.toFixed(2) : 'N/A';
 
-  // Стиль для отображения описания
-  const descriptionStyle = {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    display: '-webkit-box',
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: showMore ? 'unset' : '5',
-    height: showMore ? 'auto' : '227px',
-  };
-
-  // Обработка клика по кнопке "Add to Cart"
   const handleButtonClick = (e) => {
     e.stopPropagation();
     if (quantity > 0) {
@@ -80,28 +66,23 @@ const ProductDetails = () => {
     }
   };
 
-  // Закрытие модального окна
   const handleModalClose = () => {
     setShowModal(false);
     setModalMessage('');
   };
 
-  // Изменение количества товара
   const handleQuantityChange = (amount) => {
     setQuantity(prevQuantity => Math.max(1, prevQuantity + amount));
   };
 
-  // Переход в корзину
   const goToCart = () => {
     navigate('/cart');
   };
 
-  // Продолжение покупок
   const continueShopping = () => {
     navigate('/pages/allProductsPage');
   };
 
-  // Проверка текущего пути
   const isCurrentPage = (path) => location.pathname === path;
 
   return (
@@ -121,12 +102,12 @@ const ProductDetails = () => {
         <div className="btnLine"><img src={line} alt="line" /></div>
         <Link to={`/category/${categoryId}`}>
           <button className="categoriesPageBtn">
-            {categoryName} {/* Название категории */}
+            {categoryName}
           </button>
         </Link>
         <div className="btnLine"><img src={line} alt="line" /></div>
         <button className="current categoriesPageBtn">
-          {title} {/* Название продукта */}
+          {title}
         </button>
       </div>
       <div className='productDetails'>
@@ -160,16 +141,21 @@ const ProductDetails = () => {
               Add to Cart
             </CustomButton>
           </div>
-          <div className='productDescription' style={descriptionStyle}>
-            <p className='descriptionTitle'>Description</p>
-            <span className='descriptionText'>{description}</span>
-           </div>
-          {description.length > 50 && (
-            <button className='readMoreButton' onClick={() => setShowMore(!showMore)}>
-              {showMore ? 'Show Less' : 'Read More'}
+          <div className="infoDescription">
+            <h3>Description</h3>
+            <p 
+              className={`infoDescriptionText ${isExpanded ? 'expanded' : 'collapsed'}`}
+            >
+              {description}
+            </p>
+            <button 
+              className="readMoreButton"
+              onClick={() => setIsExpanded(!isExpanded)}
+              style={{ display: description ? 'block' : 'none' }}
+            >
+              {isExpanded ? 'Show less' : 'Show more'}
             </button>
-           
-          )}
+          </div>
         </div>
         {showModal && (
           <Modal

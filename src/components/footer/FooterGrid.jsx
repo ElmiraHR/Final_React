@@ -83,10 +83,10 @@ const Footer = () => {
                             </Typography>
                                 <Box sx={{ display: "flex", alignItems: "center" }}>
                                     <IconButton sx={{ pl: 0, color: theme.palette.primary.main }}>
-                                        <img src={instagram} alt="Instagram" style={{ height: "38px" }} />
+                                       <a href="https://www.instagram.com/"> <img src={instagram} alt="Instagram" style={{ height: "38px" }} /></a>
                                     </IconButton>
                                     <IconButton sx={{ color: theme.palette.primary.main }}>
-                                        <img src={whatsapp} alt="WhatsApp" style={{ height: "38px" }} />
+                                      <a href="https://web.whatsapp.com/"> <img src={whatsapp} alt="WhatsApp" style={{ height: "38px" }} /></a> 
                                     </IconButton>
                                 </Box>
                             </Box>
