@@ -84,6 +84,7 @@ body.dark-mode .footerTitle {
         margin: 0px;
         line-height: 22px;
     }
+
     .GridTitle{
         font-size: 12px;
     }
@@ -101,6 +102,6 @@ body.dark-mode .footerTitle {
     .footerTitle {
         font-size: 30px;
         padding-left: 30px;
-
+        /* padding-top: 130px; */
        }
   }

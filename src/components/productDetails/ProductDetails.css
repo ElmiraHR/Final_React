@@ -281,6 +281,7 @@ body.dark-mode .readMoreButton {
     max-height: 400px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 70px;
   }
   .productPrice {
     font-size: 30px;
@@ -304,14 +305,13 @@ body.dark-mode .readMoreButton {
     font-size: 20px;
     padding: 20px;
   }
-  .infoDescription {
-    height: 350px;
-  }
+
   .modalFooter {
     flex-direction: column;
   }
   .infoDescriptionText.expanded{
-    font-size: 14px;
+    font-size: 12px;
+    
   }
   .productDetailsTitle{
     font-size: 20px;
@@ -319,6 +319,9 @@ body.dark-mode .readMoreButton {
   }
   .Badge{
     margin: 20px 0;
+  }
+  .productCounter{
+    margin: 0;
   }
 }
 
