@@ -1,5 +1,5 @@
 .formBox {
-    max-width: 1480px;
+    max-width: 1440px;
     background: linear-gradient(to left, #2451C6, #0D50FF );
     display: flex;
     flex-direction: column;
@@ -155,28 +155,23 @@ input::placeholder {
    }
    .dogsImg img{
     width: 600px;
+    margin: 0 auto;
    }
 }
-/* @media (max-width: 698px) {
-.input{
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-}
 
-} */
 @media (max-width: 768px) {
     .formHeader {
         font-size: 2em;
        }
        .dogsImg img {
-        width: 80%;
+        width: 400px;
         align-items: center;
         margin: 0 auto;
        }
        input::placeholder {
         font-size: 16px;
        }
+      
 }
 
 @media (max-width: 576px) {
@@ -192,7 +187,7 @@ input::placeholder {
     overflow-x: hidden;
    }
    input {
-    width: 290px;
+    width: 282px;
     height: 20px;
     margin: 0px auto;
    }

@@ -1,11 +1,12 @@
 .buttonForm {
-    width: 516px;
+    padding: 16px 195px;
+    white-space: nowrap;
     height: 58px;
     border-radius: 6px;
     background-color: white;
     color: #282828;
     font-size: 20px;
-    padding: 16px 32px;
+   
     cursor: pointer;
   }
   .buttonForm:hover {
@@ -19,13 +20,13 @@
   }
   @media (max-width: 1400px) {
     .buttonForm{
-     
+      padding: 16px 195px;
      margin-bottom: 20px;
     }
    }
   @media (max-width: 1200px) {
     .buttonForm{
-     width: 80%px;
+      padding: 16px 180px;
      font-size: 18px;
      margin-bottom: 20px;
     }
@@ -34,6 +35,7 @@
    @media (max-width: 992px) {
     .buttonForm{
      font-size: 16px;
+     padding: 16px 150px;
     }
    }
 
@@ -41,7 +43,7 @@
 
    @media (max-width: 578px) {
     .buttonForm{
-      max-width: 300px;
+      padding: 16px 90px;
       height: auto;
      font-size: 16px;
      margin-left: 10px;

@@ -3,7 +3,11 @@
 body {
   font-family: 'Montserrat', sans-serif;
   transition: all 0.5s ease;
-
+}
+.App{
+  margin: 0 auto;
+overflow-x: hidden; 
+  box-sizing: border-box;
 }
 :root {
   --header-link-color: #000; /* Цвет текста ссылок по умолчанию */
@@ -22,9 +26,11 @@ body.light-mode {
 }
 
  
-/* 
+
 @media (max-width: 992px) {
-   
+   .App{
+    width: 100%;
+   }
 }
 @media (max-width: 768px) {
    
@@ -32,4 +38,4 @@ body.light-mode {
 
 @media (max-width: 576px) {
    
-  } */
+  }

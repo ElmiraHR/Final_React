@@ -143,9 +143,10 @@ const Cart = () => {
               <div key={item.id} className="cartItem">
                 <img src={`https://pet-shop-backend.slavab.kz${item.image}`} alt={item.title} className="cartItemImage" />
                 <div className="cartItemDetails">
-                  <button className="removeButton" onClick={() => handleRemove(item.id, item.quantity)}>✖</button>
+                  
                   <h3 className='CartItemTitle'>{truncateTitle(item.title, 200)}</h3>
                   <div className="cartItemActions">
+                  <button className="removeButton" onClick={() => handleRemove(item.id, item.quantity)}>✖</button>
                     <div className="cartItemQuantity">
                       <div className='countRight' onClick={() => handleQuantityChange(item.id, -1)} disabled={item.quantity === 1}>-</div >
                       <span className='valueSpan'>{item.quantity}</span>

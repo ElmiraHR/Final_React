@@ -61,6 +61,21 @@ body.dark-mode .footerTitle {
     font-family: 'Montserrat', sans-serif;
 }
 
+
+@media (max-width:1400px) {
+    .footerTitle{
+        padding-left: 32px;
+    }
+}
+ 
+
+@media (max-width:1200px) {
+    .footerTitle{
+        padding-left: 32px;
+    }
+}
+    
+
 @media (max-width: 992px) {
    
     .GridText, .GridText-24{
@@ -85,10 +100,7 @@ body.dark-mode .footerTitle {
         line-height: 22px;
     }
 
-    .GridTitle{
-        font-size: 12px;
-    }
-    .social{
+     .social{
         padding: 10px;
         height: 100px;
     }
@@ -99,9 +111,7 @@ body.dark-mode .footerTitle {
     .footerGrid{
    grid-auto-flow: row dense;
     }
-    .footerTitle {
-        font-size: 30px;
-        padding-left: 30px;
-        /* padding-top: 130px; */
+    .footerTitle{
+       padding-left: 30px;
        }
   }

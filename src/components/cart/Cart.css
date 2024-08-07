@@ -210,6 +210,7 @@
   
   
   .cartItemActions {
+    position: relative;
     display: flex;
     gap: 32px;
     align-items: center;
@@ -389,7 +390,7 @@
    }
    .cartItem{
     margin: 20px auto;
-    min-width: 100%;
+    max-width: 100%;
    }
    .cartRight {
     max-width: 100%;
@@ -419,17 +420,18 @@
      }
      .removeButton{
      top:0px;
-     left:150px;
+     right: 15px;
      }
-    
      .cartItemDetails {
-        max-width: 150px;
-        font-size: 14px;
-     }
+      position: relative;
+      width: 700px;
+      flex-grow: 1;
+      padding: 32px;
+  }
      .cartItemDetails h3 {
         font-size: 14px;
         white-space: nowrap;
-        width: 150px;
+        max-width: 300px;
         display: block; /* Убедитесь, что используется display: block или inline-block */
         overflow: hidden;
         text-overflow: ellipsis;
@@ -449,35 +451,30 @@
     
   }
   
-  @media (max-width: 645px) {
-    .currentPrice{
-      max-height: 30px;
-      font-size: 1.5rem;
-     }
-     .CartOriginalPrice{
-      font-size: 1rem;
-     }
-    }
-    @media (max-width: 578px) {
+
+    @media (max-width: 590px) {
      .cartItemDetails{
       flex-direction: column;
+      max-width: 90%;
      }
      .cartItem img{
-      max-width: 150px;
-      height: 150px;
+      max-width: 217px;
+      height: 244px;
       justify-content: center;
+      margin: 0 auto;
      }
      .cartRight {
       margin: 0 auto;
      }
+    
      .cartItem{
-      max-width: 95vw;
-      max-height: 150px;
-     
+      max-width: 100%;
+      height: 450px;
+     flex-direction: column;
      }
-     .cartItemQuantity{
+     /* .cartItemQuantity{
       display: none;
-     }
+     } */
      .PriceBox{
       max-height: 30px;
      }
@@ -485,19 +482,16 @@
       margin: 5px;
      }
      .CartItemTitle{
-      max-width: 100px;
+      width: 100%;
 
      }
-     .cartItemDetails{
-      padding: 5px;
-     }
+     
      
       }
       @media (max-width: 390px) {
-        .CartItemTitle{
-          max-width: 50px;
-    
-         }
+        .CartBox{
+          gap: 80px;
+        }
          .cartRight{
           width: 100%;
          }
@@ -510,15 +504,21 @@
          }
         .cartItem{
           width: 290px;
-          max-height: 150px;
+          height: 360px;
+          justify-content: center;
          
         }
         .orderForm h3{
           font-size: 24px;
         }
-      
+        .cartItem img {
+          max-width: 217px;
+          height: 244px;
+          justify-content: center;
+          margin: 0 auto;
+      }
         .removeButton{
-          top:0px;
-          left:75px;
+          top: -285px;
+        right: -63px;
           }
       }
