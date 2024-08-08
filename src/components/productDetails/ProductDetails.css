@@ -52,7 +52,7 @@
 
 .productInfo {
 	display: flex;
-	flex-direction: column;
+  flex-direction: column;
 	gap: 32px;
 	max-width: 574px;
 	padding-left: 20px;
@@ -88,7 +88,6 @@
 .productCounter {
 	display: flex;
 	align-items: center;
-	margin: 20px 0;
 	padding: 0;
 }
 
@@ -262,7 +261,7 @@ body.dark-mode .readMoreButton {
 	.productInfo {
 		justify-content: center;
 		align-items: center;
-		margin: 0 auto;
+  	margin: 0 auto;
 		padding: 20px 0;
 	}
 }
@@ -295,6 +294,7 @@ body.dark-mode .readMoreButton {
 
 	.productPrice {
 		font-size: 30px;
+    flex-direction: column;
 	}
 
 	.productImageContainer img {

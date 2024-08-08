@@ -153,7 +153,7 @@ const ProductDetails = () => {
               onClick={() => setIsExpanded(!isExpanded)}
               style={{ display: description ? 'block' : 'none' }}
             >
-              {isExpanded ? 'Show less' : 'Show more'}
+              {isExpanded ? 'Read less' : 'Read more'}
             </button>
           </div>
         </div>
