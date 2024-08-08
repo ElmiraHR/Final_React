@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Categories.css'; // Новый CSS файл для сетки
+import './Categories.css'; 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import line from "../../assets/Line.svg";
 

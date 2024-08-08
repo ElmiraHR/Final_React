@@ -232,7 +232,7 @@ const Cart = () => {
           open={snackbar.open}
           autoHideDuration={6000}
           onClose={handleSnackbarClose}
-          anchorOrigin={{ vertical: 'center', horizontal: 'right' }} // Display Snackbar above form
+          anchorOrigin={{ vertical: 'center', horizontal: 'right' }} 
         >
           <Alert onClose={handleSnackbarClose} severity="warning">
             {snackbar.message}

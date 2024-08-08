@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const CarouselComponent = () => {
   const [categories, setCategories] = useState([]);
-  const navigate = useNavigate(); // Импортируем и инициализируем useNavigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,14 +27,14 @@ const CarouselComponent = () => {
   }, []);
 
   const handleCategoryClick = (categoryId) => {
-    navigate(`/category/${categoryId}`); // Используем navigate для перенаправления
+    navigate(`/category/${categoryId}`); 
   };
 
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
-      slidesToSlide: 4 // Количество слайдов, которое будет прокручиваться за одно нажатие
+      slidesToSlide: 4 
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -61,7 +61,7 @@ const CarouselComponent = () => {
           draggable={true}
           showDots={true}
           responsive={responsive}
-          ssr={true} // означает рендеринг карусели на сервере
+          ssr={true} 
           infinite={true}
           keyBoardControl={true}
           customTransition="all .5"
@@ -76,7 +76,7 @@ const CarouselComponent = () => {
               key={index}
               className="categoriesPageItem"
               onClick={() => handleCategoryClick(category.id)}
-              style={{ cursor: 'pointer' }} // Устанавливаем курсор как указатель
+              style={{ cursor: 'pointer' }} 
             >
               {category.image ? (
                 <img src={`https://pet-shop-backend.slavab.kz${category.image}`} alt={category.title} className="category-image" />
@@ -88,7 +88,7 @@ const CarouselComponent = () => {
           ))}
         </Carousel>
       ) : (
-        <p>Загрузка данных...</p>
+        <p>loading...</p>
       )}
     </div>
   );

@@ -8,7 +8,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
 import Theme from './components/Theme';
-import LoadingScreen from './components/loading/LoadingScreen'; // Импортируйте ваш компонент загрузки
+import LoadingScreen from './components/loading/LoadingScreen'; 
 import CategoriesGrid from './components/categories/Categories';
 import ProductItem from './pages/ProductItem';
 
@@ -27,7 +27,7 @@ function App() {
       setIsLoading(false);
     }, 3000);
 
-    return () => clearTimeout(timer); // Очистка таймера при размонтировании компонента
+    return () => clearTimeout(timer); 
   }, []);
 
   if (isLoading) {
@@ -41,7 +41,7 @@ function App() {
           <div className="App">
             <Header />
             <Routes>
-              <Route path="/" element={<Home />} />  {/* Добавьте этот маршрут */}
+              <Route path="/" element={<Home />} />  
               <Route path="/pages/home" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/pages/categories" element={<CategoriesGrid />} /> 

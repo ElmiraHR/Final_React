@@ -1,4 +1,4 @@
-// src/features/counter/counterSlice.jsx
+
 import { createSlice } from '@reduxjs/toolkit';
 
 export const counterSlice = createSlice({

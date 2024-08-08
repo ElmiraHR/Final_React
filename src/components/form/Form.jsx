@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import CustomModal from '../customModal/CustomModal';
-import './Form.css'; // Assuming you have a CSS file for your styles
+import './Form.css'; 
 import ButtonForm from '../button/ButtonForm';
 import pets from "../../assets/pets.svg"
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CustomButton from '../button/CustomButton';
-import Modal from '../customModal/CustomModal'; // Импортируем компонент модалки
+import Modal from '../customModal/CustomModal';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cart/cartSlice';
 import './AllProducts.css';
@@ -112,7 +112,7 @@ const AllProducts = () => {
   };
 
   const continueShopping = () => {
-    navigate('/pages/allProductsPage'); // Предполагается, что у вас есть маршрут для всех продуктов
+    navigate('/pages/allProductsPage'); 
   };
 
   const isCurrentPage = (path) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ButtonForm.css'; // Импортируйте обычный CSS
+import './ButtonForm.css';
 
 const ButtonForm = ({ children, clickedText }) => {
   const [isClicked, setIsClicked] = useState(false);

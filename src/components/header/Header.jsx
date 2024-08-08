@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Header.css';
 import logo from '../../assets/logo.svg';
-import cart_icon from '../../assets/icon.svg'; // Путь к иконке корзины
+import cart_icon from '../../assets/icon.svg'; 
 import { ThemeToggleButton } from '../Theme';
 
 const Header = () => {
-  // Получаем количество товаров из состояния корзины в Redux Store
+
   const cartItems = useSelector((state) => state.cart.items);
 
-  // Функция для подсчета общего количества товаров в корзине
+ 
   const calculateTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
@@ -39,7 +39,7 @@ const Header = () => {
             </div>
           )}
         </Link>
-        <ThemeToggleButton /> {/* Кнопка переключения темы */}
+        <ThemeToggleButton /> 
       </div>
     </header>
   );

@@ -29,7 +29,7 @@ const ProductsByCategory = ({ isDarkMode }) => {
           const categoryProducts = categoryResponse.data.data;
           const allProducts = productsResponse.data;
 
-          // Фильтрация продуктов по категории
+         
           const filteredProducts = allProducts.filter(product => categoryProducts.some(cp => cp.id === product.id));
           
           setProducts(filteredProducts);
@@ -46,7 +46,7 @@ const ProductsByCategory = ({ isDarkMode }) => {
   }, [id]);
 
   const handleProductClick = (productId) => {
-    console.log('Navigating to product details with ID:', productId); // Логирование для отладки
+    console.log('Navigating to product details with ID:', productId); 
     navigate(`/product/${productId}`);
   };
 

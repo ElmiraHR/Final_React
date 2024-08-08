@@ -64,7 +64,7 @@ const Footer = () => {
                                 alignItems: "flex-start",
                                 justifyContent: "center",
                                 height: "150px",
-                                backgroundColor: "#F1F3F4", // Фон элемента
+                                backgroundColor: "#F1F3F4", 
                                 borderRadius: "12px",
                                 textAlign: "left",
                             }}

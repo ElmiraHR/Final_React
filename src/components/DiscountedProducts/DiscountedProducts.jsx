@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import CustomButton from '../button/CustomButton';
-import Modal from '../customModal/CustomModal'; // Импортируем компонент модалки
+import Modal from '../customModal/CustomModal'; 
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cart/cartSlice';
 import './DiscountedProducts.css';
@@ -207,7 +207,6 @@ const DiscountedProducts = () => {
         )}
       </div>
 
-      {/* Модалка */}
       <Modal
         isOpen={showModal}
         onClose={handleModalClose}

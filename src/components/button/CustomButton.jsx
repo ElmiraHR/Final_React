@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Button.css'; // Импортируйте обычный CSS
+import './Button.css';
 
 const CustomButton = ({ children, clickedText, onClick }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -7,7 +7,7 @@ const CustomButton = ({ children, clickedText, onClick }) => {
   const handleClick = (e) => {
     setIsClicked(true);
     if (onClick) {
-      onClick(e); // Передайте событие e в обработчик onClick
+      onClick(e); 
     }
   };
 

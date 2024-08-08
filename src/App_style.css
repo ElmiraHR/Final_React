@@ -10,8 +10,8 @@ overflow-x: hidden;
   box-sizing: border-box;
 }
 :root {
-  --header-link-color: #000; /* Цвет текста ссылок по умолчанию */
-  --header-background-color: #fff; /* Цвет фона хедера */
+  --header-link-color: #000; 
+  --header-background-color: #fff;
 }
 
 body.dark-mode {
@@ -32,10 +32,3 @@ body.light-mode {
     width: 100%;
    }
 }
-@media (max-width: 768px) {
-   
-}
-
-@media (max-width: 576px) {
-   
-  }

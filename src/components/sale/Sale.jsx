@@ -99,7 +99,7 @@ const SaleComponent = () => {
           ))}
         </Carousel>
       ) : (
-        <p>Загрузка данных...</p>
+        <p>loading...</p>
       )}
     </div>
   );
